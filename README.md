@@ -136,6 +136,21 @@ docker run -p 5555:80 -v "$(pwd):/usr/share/nginx/html" --name nginx1 nginx
 cd nginx2
 docker run -p 7777:80 -v "$(pwd):/usr/share/nginx/html" --name nginx2 nginx
 
-# To remove  a exiting container
+```
+- Start/Remove a container
+```
+# To re-start an stopped existing container
+docker start CONTAINER_NAME
+
+# To remove  an stopped existing container
 docker rm CONTAINER_NAME
+
+# To remove all stopped containers
+docker container prune
+
+# To remove  multiple stopped containers
+docker container rm CONTAINER_ID_1 CONTAINER_ID_2 
+
+# Verify stopped containers
+docker ps -a
 ```

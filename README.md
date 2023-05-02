@@ -154,3 +154,18 @@ docker container rm CONTAINER_ID_1 CONTAINER_ID_2
 # Verify stopped containers
 docker ps -a
 ```
+
+## ✅ Running Python Container in Docker
+```
+docker pull python
+docker run -it python
+help()
+exit()
+cd python
+docker run -it -v "$(pwd):/app" python python3 /app/hello-world.py
+# or specify -w /app for Working directory
+docker run -it -v "$(pwd):/app" -w /app  python python3 hello-world.py
+
+# Run Calendar application with python container
+docker run -it -v "$(pwd):/app" -w /app  python python3 calendar-app.py
+```

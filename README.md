@@ -58,7 +58,7 @@ Master Docker for building applications
   docker stop CONTAINER_ID/NAMES
   ```
 ## ✅ Port and Volume mapping
--Nginx
+- Nginx
 ```
 docker pull nginx
 ```
@@ -66,3 +66,66 @@ docker pull nginx
   ```
   docker run -p 8080:80 nginx
   ```
+  - connecting local html file in local pc to nginx container 
+  ```
+  docker run -p 8081:80 -v "$(pwd):/usr/share/nginx/html" nginx
+  ```
+  - check ip in Windown:
+  ```
+  ipconfig
+  ```
+  - check ip in Mac:
+  ```
+  ifconfig
+  ```
+  - Create example favicon in  favicon.io. 
+    - Copy all created favion to the server folder of nginx
+    - Create 'index.html': Tap '!', then press 'tab' to create a Html template, paste the html code generated in the 'favicon.io', then pass 'h1' to the body'
+    - rerun the nginx server
+
+## ✅ Docker Container Management (Ubuntu, Nginx)
+- Run in the background
+```
+docker run -p 8080:80 -d nginx
+```
+- Refresh the page: 'http://localhost:8080/' and see the logs
+```
+docker logs CONTAINER_ID
+```
+- Stop container
+```
+docker stop CONTAINER_ID
+```
+- Run inside container
+```
+docker run -it alpine
+docker run -id ubuntu
+ls
+exit
+```
+- Create multiple containers on the same image
+```
+# First container
+docker run -id ubuntu
+ls
+mkdir test
+cd test
+touch text.txt
+cd ..
+ls
+hostname
+hostname -i # ip address
+
+# Second container using ubuntu image
+docker run -id ubuntu
+ls
+mkdir test2
+cd test2
+touch text2.txt
+cd ..
+ls
+hostname
+hostname -i # ip address
+```
+- Create multiple Nginx server
+

@@ -66,7 +66,7 @@ docker pull nginx
   ```
   docker run -p 8080:80 nginx
   ```
-  - connecting local html file in local pc to nginx container. Hello World!
+  - connecting local html file in local pc to nginx container. 
   ```
   docker run -p 8081:80 -v "$(pwd):/usr/share/nginx/html" nginx
   ```

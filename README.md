@@ -128,4 +128,14 @@ hostname
 hostname -i # ip address
 ```
 - Create multiple Nginx server
+```
+# First container
+cd nginx1
+docker run -p 5555:80 -v "$(pwd):/usr/share/nginx/html" --name nginx1 nginx
+# Second container using ubuntu image
+cd nginx2
+docker run -p 7777:80 -v "$(pwd):/usr/share/nginx/html" --name nginx2 nginx
 
+# To remove  a exiting container
+docker rm CONTAINER_NAME
+```

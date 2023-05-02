@@ -53,3 +53,16 @@ Master Docker for building applications
   ping google.com
   exit
   ```
+  - stop running container
+  ```
+  docker stop CONTAINER_ID/NAMES
+  ```
+## ✅ Port and Volume mapping
+-Nginx
+```
+docker pull nginx
+```
+  - open/run nginx container: define the local port is 8080, mapping to internal port 80 of nginx
+  ```
+  docker run -p 8080:80 nginx
+  ```

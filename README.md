@@ -234,3 +234,16 @@ db.animals.insertOne({"animal": "dog"})
 db.animals.insertOne({"animal": "monkey"})
 db.animals.find()
 ```
+- Mapping db in local computer to different mongo container
+```
+cd mongo
+docker run -d -v "$(pwd)/db:/data/db" mongo
+docker ps
+docker exec -it CONTAINER_ID bash
+mongosh
+use mydb # create a database named 'mydb'
+db.fruits.insertOne({"fruit": "kiwi"})
+db.fruits.insertOne({"fruit": "orange"})
+db.fruits.insertOne({"fruit": "banana"})
+db.fruits.find()
+```

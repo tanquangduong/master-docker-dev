@@ -246,4 +246,10 @@ db.fruits.insertOne({"fruit": "kiwi"})
 db.fruits.insertOne({"fruit": "orange"})
 db.fruits.insertOne({"fruit": "banana"})
 db.fruits.find()
+exit
+docker stop CONTAINER_ID
+# Create a new mongo container, sharing the same mydb in db
+docker run -d -v "$(pwd)/db:/data/db" mongo
+use my_db
+db.fruits.find()
 ```

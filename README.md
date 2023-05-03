@@ -169,3 +169,34 @@ docker run -it -v "$(pwd):/app" -w /app  python python3 hello-world.py
 # Run Calendar application with python container
 docker run -it -v "$(pwd):/app" -w /app  python python3 calendar-app.py
 ```
+
+## ✅ Running Node Container in Docker
+- Pull and run node container
+```
+docker pull node
+docker run -it node
+.help
+console.log('Hello from Node.js!')
+const a = 5
+2+3
+.exit
+```
+- Running basic examples with Node.js container: npm init, nmp install, express package etc
+```
+mkdir node
+cd node
+docker run -it -v "$(pwd):/app" -w /app  node node hello.js
+cd express
+docker run -it -v "$(pwd):/app" -w /app  node npm init
+docker run -it -v "$(pwd):/app" -w /app  node npm install express
+docker run -it -v "$(pwd):/app" -w /app -p 3000:3000 node node index.js
+# To interrupt:
+Ctr+C
+# To stop:
+docker stop CONTAINER_ID
+```
+- Create Node application to create txt file
+```
+cd files
+docker run -it -v "$(pwd):/app" -w /app node node index.js
+```

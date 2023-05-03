@@ -253,3 +253,54 @@ docker run -d -v "$(pwd)/db:/data/db" mongo
 use my_db
 db.fruits.find()
 ```
+
+## ✅ Communication between containers and environment variables
+- Pull and run wordpress image
+```
+docker pull wordpress
+docker run -d -p 8080:80 wordpress
+```
+- Communicate between different containers
+```
+# 1st busybox container
+docker run -it busybox 
+hostname -i
+ping 172.17.0.3 # hostname of 2nd container
+
+# 2nd busybox container
+docker run -it busybox  
+hostname -i
+ping 172.17.0.2 # hostname of 1st container
+
+# inspect container network
+docker inspect CONTAINER_ID
+
+```
+- Show env of container
+```
+docker run -it busybox 
+env
+
+# otherways:
+docker ps
+docker exec CONTAINER_ID env
+```
+
+- Setup mysql container env
+```
+docker pull mysql
+docker run -e MYSQL_ROOT_PASSWORD=my-password mysql
+docker exec CONTAINER_ID env
+```
+- Pull and run phpmyadmin container
+```
+docker pull phpmyadmin
+docker run -p 8080:80 phpmyadmin
+```
+- Connecting phpmyadmin to mysql container
+```
+docker ps
+docker inspect MYSQL_CONTAINER_ID # then get IPaddress
+docker run -p 8080:80 -e PMA_HOST=172.17.0.2 phpmyadmin
+
+```

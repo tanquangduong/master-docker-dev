@@ -200,3 +200,37 @@ docker stop CONTAINER_ID
 cd files
 docker run -it -v "$(pwd):/app" -w /app node node index.js
 ```
+
+
+## ✅ Running MongoDB Container in Docker
+- Pull and run mongo container
+```
+docker pull mongo
+docker run mongo
+# Run multiple process in the same container
+
+## Execute in bash
+docker exec -it CONTAINER_ID bash
+ls /usr/local/bin
+cat /usr/local/bin/docker-entrypoint.sh
+
+## Execute in sh
+docker exec -it CONTAINER_ID sh
+
+## See which running execution
+ps -e
+
+# Inspect container
+docker inspect CONTAINER_ID
+```
+- Create a database table in mongo container
+```
+docker exec -it mongosh
+db.version()
+use test
+db
+db.animals.insertOne({"animal": "cat"})
+db.animals.insertOne({"animal": "dog"})
+db.animals.insertOne({"animal": "monkey"})
+db.animals.find()
+```

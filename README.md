@@ -341,3 +341,15 @@ ping OTHER_CONTAINER_IP
 ping OTHER_CONTAINER_HOSTNAME
 ping OTHER_CONTAINER_CUSTOMNAME
 ```
+
+## ✅ Additional containers - Elasticsearch, Redis, Httpd
+```
+docker pull appropriate/curl
+docker run -it appropriate/curl sh
+curl google.com
+
+docker pull elasticsearch:7.6.2
+
+docker run redis
+docker exec -it REDIS_CONTAINER_ID redis-cli
+```

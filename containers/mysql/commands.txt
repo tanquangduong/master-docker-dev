@@ -10,7 +10,7 @@ START PHPMYADMIN WITH PMA_HOST VARIABLE (over IP address)
 docker run \
     -p 8080:80 \
     -e PMA_HOST=172.17.0.2 \
-    phpmyadmin/phpmyadmin
+    phpmyadmin
 
 
 
@@ -32,4 +32,4 @@ docker run \
     --network mysql \
     -p 8080:80 \
     -e PMA_HOST=mysql \
-    -d phpmyadmin/phpmyadmin
+    -d phpmyadmin

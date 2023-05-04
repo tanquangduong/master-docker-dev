@@ -304,3 +304,40 @@ docker inspect MYSQL_CONTAINER_ID # then get IPaddress
 docker run -p 8080:80 -e PMA_HOST=172.17.0.2 phpmyadmin
 
 ```
+
+## ✅ Default and Custom Bridge Networks in Docker (WordPress, MySQL)
+- Test communication between 2 busybox
+```
+# 1st busybox
+docker run -it --name busybox1 -h busybox-one busybox
+hostname
+hostname -i
+
+# 2nd busybox
+docker run -it --name busybox2 -h busybox-two busybox
+hostname
+hostname -i
+
+# inspect network bridge
+docker network --help
+docker network ls
+docker network inspect bridge
+
+# create a custom network
+docker network create custom
+## create 1st busybox using custom network
+docker run -it --network custom busybox
+hostname -i
+hostname
+
+## create 2nd busybox using custom network
+docker run -it --network custom busybox
+docker run -it --network custom --name busybox1 busybox
+hostname -i
+hostname
+
+## check communication between two container
+ping OTHER_CONTAINER_IP
+ping OTHER_CONTAINER_HOSTNAME
+ping OTHER_CONTAINER_CUSTOMNAME
+```

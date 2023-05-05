@@ -363,5 +363,8 @@ uname
 uname -r
 uptime
 w
-
+unminimize
+apt-get install man-db
+man
+q # to quit from document
 ```

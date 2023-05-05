@@ -353,3 +353,15 @@ docker pull elasticsearch:7.6.2
 docker run redis
 docker exec -it REDIS_CONTAINER_ID redis-cli
 ```
+
+## ✅ Linux
+```
+docker run -it ubuntu
+ls
+echo $SHELL
+uname
+uname -r
+uptime
+w
+
+```

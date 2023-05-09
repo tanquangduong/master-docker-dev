@@ -365,6 +365,83 @@ uptime
 w
 unminimize
 apt-get install man-db
-man
+man # get tuto/doc of one cmd, e.g. man ls
 q # to quit from document
+# See multiple runing process
+top
+kill PID
+
+# htop
+man apt-get
+apt-get update
+apt-get install htop
+which htop
+htop
+F2 # setup
+F10 # done/quit
+
+# Data streams and Piping in Linux
+## 3 kinds of signal: stdin, stdout, stderr
+
+## Add results of stdout into a file, e.g. file.txt
+ls >stdout.txt
+cat stdout.txt # see what's inside the stdout.txt
+rm stdout.txt
+
+## save stderr message into stderr.txt
+mkdir 2> stderr.txt
+cat stderr.txt
+
+## see all the processes
+ps -e
+
+## numeric id for std: 0: stdint, 1: stdout, 2: stderr
+ls 1> stdout.txt 2> stderr.txt
+
+cat non_exit_file.txt 1>> stdout.txt 2>>stderr.txt
+cat stderr.txt
+
+## appending messages
+mkdir 1>>stdout.txt 2>>stderr.txt
+cat stderr.txt
+
+## Piping
+ls | cat
+echo "Hello world" | cat >hello.txt
+
+```
+
+## ✅ Linux File and Directories Managements
+```
+pwd # print working directory
+cd # comeback to root directory of user
+cd .. # comeback to parent directory
+cd ../ # press 'tab' to show sub folders or files inside 
+cd / # go to
+
+ls -l
+ls -F
+ls -F > test.txt
+ls -la # see hidden files
+rm *.txt
+
+# Create and Removing directories and files
+cd
+pwd
+mkdir test
+cd test 
+mkdir test 1
+cd ..
+mkdir -p test2/test3
+rm -r test
+mkdir test
+cd test
+touch test1.txt # create an empty file
+echo "hello world" > hello.txt
+touch --help
+```
+
+## ✅ Edditing files with Vim and Nano Editors
+```
+apt-get update
 ```

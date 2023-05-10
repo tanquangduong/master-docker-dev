@@ -462,5 +462,79 @@ nano file2.txt
 Ctr+X # Save and quit editing mode
 Enter # Quit nano
 
+```
+## ✅ Linux: files manipulation
+```
+# copy file
+cp file3.txt file4.txt
+cp /etc/libaudit.conf libaudit-backup.conf
+mkdir etc-backup
+cp -r /etc/ etc-backup
+rm -r etc-backup
+cp -r /etc/* etc-backup
 
+# rename file
+rm file4.txt file5.txt
+file1.txt  file2.txt  file3.txt  file5.txt  gai.conf  libaudit-backup.conf
+
+# create large file
+# https://www.lipsum.com/
+cat > large-file.txt
+## the above cmd will listen the input stream, then copy all the long content
+ls
+cat large-file.txt
+
+# see first ten lines of the large file
+head large-file.txt
+head -n 3 large-file.txt 
+
+# see last ten lines of the large file
+tail large-file.txt
+tail -n 3 large-file.txt 
+tail -f large-file.txt
+## open 2nd terminal, add/append lines into large file
+echo "Additional line 1" >> large-file.txt
+
+# see large file with cmd 'more'
+more large-file.txt
+
+# See last cmd
+history
+```
+
+## ✅ Linux: search and filter file using 'grep'
+```
+cd /
+ls
+cd bin
+ls -l
+ls -l | grep hostname
+
+ls -l | grep ^l # looking line start with 'l'
+ls -l | grep ch$ # looking for line ends with 'ch'
+ls -l | grep "\->" 
+ls -l | grep " 2 root"
+ls -li | grep " 2 root" # 'i' represent inode
+
+# search keyword in text
+cat file5.txt | grep key_word
+
+```
+
+## ✅ Linux: create soft and hard link
+```
+# create soft link
+ln -s file5.txt file5-softlink.txt
+ls
+ls -l
+cp file5.txt file6.txt
+ls -l
+nano file5.txt
+cat file5.txt
+head -n 1 file5.txt
+head -n 1 file5-softlink.txt
+history
+
+# create hard link
+ln file6.txt file6-hardlink.txt
 ```

@@ -444,4 +444,23 @@ touch --help
 ## ✅ Edditing files with Vim and Nano Editors
 ```
 apt-get update
+apt-get install vim nano
+
+# check vim
+vim
+:q
+vim file1.txt
+Shift+I # start editting
+ESC # Exit from editing mode
+:wq # Save changes and quit vim
+cat file1.txt
+
+# check nano
+nano
+Ctr+X
+nano file2.txt
+Ctr+X # Save and quit editing mode
+Enter # Quit nano
+
+
 ```

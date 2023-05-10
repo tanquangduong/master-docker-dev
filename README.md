@@ -538,3 +538,25 @@ history
 # create hard link
 ln file6.txt file6-hardlink.txt
 ```
+
+## ✅ Linux: Search operations
+```
+touch file-one.pdf
+touch file-two.pdf
+find -name file-one.pdf
+find .. -name file-one.pdf
+find -name "*.pdf"
+find . -type f # find all file
+find . -type d # find all directory
+find . -type l -ls
+find . -type d -ls
+find . -type f -ls
+find . -type f -empty
+find / -perm 777 -ls # perm stands for permission
+find . -perm 777 -ls
+find . -name "*.txt" -exec  ls -la {} \;
+find . -exec  ls -la --color {} \;
+find . -name "*.txt" -printf "%p %k KB\n"
+find / -name kernel -type d -exec ls -l --color {} \;
+find / -name kernel -type d | xargs ls -l --color
+```

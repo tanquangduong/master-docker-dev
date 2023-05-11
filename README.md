@@ -637,3 +637,65 @@ nano numbers.txt
 sort -n numbers.txt
 sort -nu numbers.txt
 ```
+
+## ✅ Linux: User management
+```
+whoami
+pwd
+pwd
+cd
+whoami
+pwd
+adduser --help
+useradd quang
+su quang
+passwd quang
+su quang
+userdel quang
+useradd --help
+useradd --help | grep home
+useradd -m quang
+su quang
+ls -la /home/quang
+cat /etc/default/useradd
+nano /etc/default/useradd # change SHELL=/bin/sh to SHELL=/bin/bash
+useradd -m test
+su test
+su - quang
+su - test
+userdel -r test
+userdel -r quang
+ls /home/
+history
+adduser --help
+adduser quang
+ls -la /home/quang
+cat /etc/passwd
+cat /etc/adduser.conf
+su - quang
+
+# Change ownership
+ls -la /home/quang/
+su - quang
+chown quang /home/quang/2.txt
+ls -la /home/quang/
+chown quang:quang /home/quang/2.txt
+ls -la /home/quang/
+su - quang
+mkdir /home/quang/tmp
+ls -la /home/quang/
+cd /home/quang/tmp/
+touch 3.txt 4.txt
+ls -la
+cd
+pwd
+chown quang:quang /home/quang/tmp/
+ls -la /home/quang/tmp/
+chown --help
+chown -R quang:quang /home/quang/tmp/
+ls -la /home/quang/tmp/
+su - quang
+
+# Changing permissions
+
+```

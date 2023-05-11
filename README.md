@@ -696,6 +696,13 @@ chown -R quang:quang /home/quang/tmp/
 ls -la /home/quang/tmp/
 su - quang
 
-# Changing permissions
-
+# Changing permissions: user-other user in group-other user outside group: -rwxrwxrwx
+touch /home/quang/new-file.txt
+chmod 000 /home/quang/new-file.txt
+chmod 111 /home/quang/new-file.txt
+chmod 777 /home/quang/new-file.txt
+chmod 755 /home/quang/new-file.txt
+chmod g-x /home/quang/new-file.txt
+chmod g+x /home/quang/new-file.txt
+chmod -x /home/quang/new-file.txt
 ```

@@ -706,3 +706,38 @@ chmod g-x /home/quang/new-file.txt
 chmod g+x /home/quang/new-file.txt
 chmod -x /home/quang/new-file.txt
 ```
+
+## ✅ Linux: Executable file
+```
+touch script.sh
+ls -la
+chmod u+x script.sh
+ls -la
+nano script.sh
+which bash
+nano script.sh
+ls
+script.sh
+/home/quang/script.sh
+./script.sh
+nano script.sh
+./script.sh
+/home/quang/script.sh
+echo $PATH
+```
+
+## ✅ Linux: Networking
+```
+echo $0
+hostname
+hostname -i
+ping google.com
+ip address
+ping 127.0.0.1
+ping localhost
+ip address | grep inet
+ip route
+hostname -i
+ifconfig
+ifconfig | grep inet
+```

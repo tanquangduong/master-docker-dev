@@ -560,3 +560,80 @@ find . -name "*.txt" -printf "%p %k KB\n"
 find / -name kernel -type d -exec ls -l --color {} \;
 find / -name kernel -type d | xargs ls -l --color
 ```
+
+## ✅ Linux: Compressing and Sorting
+```
+docker ps -a
+docker start CONTAINER_ID
+docker exec -it CONTAINER_ID bash 
+tar --help
+gzip --help
+
+# create a tar file
+tar -cf archive.tar ~
+ls -lh # h stands for human readble
+
+# read tar file
+tar -tf archive.tar
+
+# compress tar file
+gzip archive.tar
+ls -la
+ls -lah
+
+# remove archive file
+rm archive.tar.gz
+
+# recreate archive commpresion with tar
+tar -czf ../archive.tar.gz .
+
+# extract tar file
+cd 
+mkdir tmp
+cd tmp
+tar -xvzf /archive.tar.gz
+ls 
+
+# get info from tar file
+apt-get install file
+file \archive.tar.gz
+
+# Sorting file
+ls -lah
+ls -lS
+ls -lh --sort=
+ls -lh --sort=size
+ls -lh --sort=extension
+ls -lh --sort=version
+ls -lh --sort=time
+
+# Sort content in file
+
+nano animals.txt
+sort --help
+nano animals.txt
+cat animals.txt
+sort --help
+sort animals.txt
+sort -r animals.txt
+sort -o sorted.txt animals.txt
+cat sorted.txt
+cat animals.txt
+sort -ro sorted-r.txt animals.txt
+cat sorted-r.txt
+nano numbers.txt
+cat numbers.txt
+sort -n numbers.txt
+sort -nr numbers.txt
+sort -n -o number-sorted.txt  numbers.txt
+sort -nr -o number-sorted-r.txt  numbers.txt
+ls
+cat number-sorted.txt
+cat number-sorted-r.txt
+sort -nr numbers.txt > sorted-numbers.txt
+cat sorted-numbers.txt
+sort --help | grep unique
+nano numbers.txt
+sort -n numbers.txt
+sort -nu numbers.txt
+```

@@ -740,4 +740,40 @@ ip route
 hostname -i
 ifconfig
 ifconfig | grep inet
+
+ping google.com
+ping 172.217.20.174
+nslookup google.com
+nslookup instagram.com
+ping instagram.com
+nslookup instagram.com
+traceroute google.com
+whois facebook.com
+whois aisoftwaregeeks.com
+whois marsific.com
+```
+
+## ✅ Linux: Networking SSH
+```
+docker run -it -p 2222:22 ubuntu
+apt-get update
+apt-get install openssh-server
+ssh
+service ssh running
+service ssh status
+service ssh start
+service ssh status
+whoami
+adduser quang
+nano
+apt-get install nano
+passwd
+nano /etc/ssh/sshd_config
+# uncomment the line, like this: PermiRootLogin yes
+service ssh restart
+service ssh status
+
+# on the local pc: 
+ssh -p 2222 quang@localhost # then add password
+ssh -p 2222 root@localhost # then add password
 ```

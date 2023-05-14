@@ -777,3 +777,30 @@ service ssh status
 ssh -p 2222 quang@localhost # then add password
 ssh -p 2222 root@localhost # then add password
 ```
+
+## ✅ Linux: Networking Curl & wget
+```
+curl www.google.com
+curl www.google.com > google.html
+wget https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
+```
+
+## ✅ Linux: Environment
+```
+env
+echo $ENV_NAME
+echo env | greg Key_word
+export MY_NEW_ENV=Test
+touch test_env.sh
+nano test_env.sh
+# add the follwing cmd line to test_env.sh
+#!/bin/bash
+echo $MY_NEW_ENV
+Ctr+X 
+Y
+ls -la
+chmod +x test_env.sh
+./test_env.sh
+```
+
+
